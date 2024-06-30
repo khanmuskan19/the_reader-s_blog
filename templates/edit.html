@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('  {{ url_for('static', filename='img/home-bg.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                  <div class="site-heading">
+                      <h1>Admin Panel</h1>
+                      <span class="subheading">Manage your posts and change them</span>
+                    </div>
+              </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+ 
+<h1> Basic Actions</h1>
+            <a href="/login"><button class="btn btn-primary float-right"> Dashboard Home</button></a>
+            <a href="/logout"><button class="btn btn-primary float-right"> Logout</button></a>
+<hr></hr>
+<h1>Add/Edit Post</h1>
+
+
+
+
+
+
+<form name="sentMassage" id="edit" action="/edit/{{sno}}" method='POST' data-sb-form-api-token="API_TOKEN">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" name='title' placeholder="Title" data-sb-validations="required" value="{{post.title}}"/>
+                                    <label for="name">Title</label>
+                                   
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="tline" name='tline' type="text" placeholder="Tag_line" data-sb-validations="required,email" value="{{post.post_tag}}" />
+                                    <label for="email">Tag line</label>
+                                    
+                                    
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="slug" type="text" placeholder="Slug" name='slug' data-sb-validations="required" value="{{post.slug}}"/>
+                                    <label for="phone">Slug</label>
+                                    
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="content" placeholder="Content"name='content' style="height: 12rem" data-sb-validations="required" value="{{post.content}}"></input>
+                                    <label for="Content">Content</label>
+                                     
+                                </div>
+                               <div class="form-floating">
+                                    <input class="form-control" id="img_file" type="file" name='img_file' placeholder="Image_File." data-sb-validations="required" value="{{post.image}}" />
+                                    <label for="name">Image File</label>
+                                    
+
+                                </div> 
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                            </form>
+                            
+                
+      
+                        
+                </div>
+          </div>
+     </div>
+</div>
+{% endblock %}
+<!-- I've just rearrange it to make it beautiful and understable...it's not necceasry!! -->

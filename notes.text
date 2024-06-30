@@ -1,0 +1,19 @@
+We've only created the json file to the facility of non tech person is they use
+our website to make them understand the code in simpler terms. It's not necessary
+if you are okay with the code without jason file(json zruri nhi h sirf simple bnane k lie h
+ese b kam chl skta...it's like a second and simple method
+
+We can also change name/title, subheading anything like that from json file along with some improvement in html file.
+
+DIV CLASS= TEXT CENTER centre the text/photo in HTML.
+
+
+
+
+Things to do after finishing the project:
+i. Image setting of the posts
+1. Resize the log in box
+2. Fix the logo image in login box
+3.to get newer post on top with correct sr. no
+4. Pop up flash msg and disappearing after a few secs
+

@@ -1,0 +1,19 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/thereadersblog",
+    "prod_uri": "mysql://root:@localhost/thereadersblog",
+    "fb_url": "https://facebook.com/thereadersblog",
+    "tw_url": "https://twitter.com/thereadersblog",
+    "gh_url": "https://github.com/thereadersblog",
+    "about_text": "Hi, I'm Muskan Khan, the admin of this blog!!",
+    "no_of_posts": 2,
+    "blog_name": "The Reader's Blog",
+    "login_img": "RB.jpg",
+    "admin_user": "Muskan Khan",
+    "admin_pass": "Kane 22",
+    "upload_location":"C:\\Users\\Muskan Khan\\PycharmProjects\\1st\\static"
+
+  }
+}
