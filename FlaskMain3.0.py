@@ -52,6 +52,7 @@ class Posts(db.Model):
 
 @app.route('/')
 def home():
+    # flash("welcome to The Reader's Blog", 'success')
     posts = Posts.query.filter_by().all()
     last=math.ceil(len(posts)/int(params['no_of_posts']))
     page= request.args.get('page')
@@ -103,7 +104,7 @@ def contact():
         # and RHS from this function's variable
         db.session.add(entry)
         db.session.commit()
-
+        flash("Thanks for submitting your details. We'll get back to you soon!",'success')
     return render_template('contact.html', params=params)
 
 
@@ -147,8 +148,9 @@ def edit(sno):
                 post = Posts(title=box_title, slug=slug, content=content, image=image_file, post_tag=tagline,date=date,sno=sno)
                 db.session.add(post)
                 db.session.commit()
+                # flash('Your post has been added successfully!', 'success')
                 return redirect('/edit/' + str(post.sno))
-                # flash('Post added successfully!', 'success')
+
             else:
                 post = Posts.query.filter_by(sno=sno).first()
                 post.title = box_title
@@ -158,7 +160,7 @@ def edit(sno):
                 post.post_tag = tagline
                 post.date = date
                 db.session.commit()
-                # flash('Post edited successfully!', 'success')
+                # flash('Your post has been edited successfully!', 'success')
                 return redirect('/edit/'+ sno)
     post = Posts.query.filter_by(sno=sno).first()
     return render_template('edit.html', params=params,post=post,sno=sno)
